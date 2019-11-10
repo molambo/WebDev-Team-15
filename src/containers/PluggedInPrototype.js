@@ -33,7 +33,7 @@ export class PluggedInPrototype extends React.Component {
     searchVideo = searchTitleChanged =>
         this.findVideoByTitle(searchTitleChanged)
 
-    findVideoByTitle = title =>
+    findVideoByTitle = searchphrase =>
         fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(response => {
@@ -43,7 +43,7 @@ export class PluggedInPrototype extends React.Component {
                 })
             })
 
-    selectVideo = imdbID =>
+    selectVideo = searchphrase =>
         fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(video => {
