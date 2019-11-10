@@ -34,7 +34,7 @@ export class PluggedInPrototype extends React.Component {
         this.findVideoByTitle(searchTitleChanged)
 
     findVideoByTitle = title =>
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxresults}}&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(response => {
                 console.log(response.Search)
@@ -44,7 +44,7 @@ export class PluggedInPrototype extends React.Component {
             })
 
     selectVideo = imdbID =>
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxresults}}&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(video => {
                 console.log(video)
