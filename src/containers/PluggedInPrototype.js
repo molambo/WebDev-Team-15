@@ -3,6 +3,7 @@ import {faPlug} from "../../node_modules/@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '../../node_modules/@fortawesome/react-fontawesome';
 import './PluggedInPrototype.css'
 import './../config'
+import VideoListComponent from "../components/VideoListComponent"
 
 export class PluggedInPrototype extends React.Component {
     constructor(props) {
@@ -16,8 +17,7 @@ export class PluggedInPrototype extends React.Component {
         }
     }
     componentDidMount() {
-        console.log("Component Did Mount")
-        // this.findMovieByTitle("batman")
+        this.findVideoByTitle("adele")
     }
 
     // createReview = review =>
@@ -34,17 +34,17 @@ export class PluggedInPrototype extends React.Component {
         this.findVideoByTitle(searchTitleChanged)
 
     findVideoByTitle = searchphrase =>
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(response => {
-                console.log(response.Search)
+              console.log(response.items)
                 this.setState({
-                    videos: response.Search
+                    videos: response.items
                 })
             })
 
     selectVideo = searchphrase =>
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=&AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(video => {
                 console.log(video)
@@ -80,11 +80,14 @@ export class PluggedInPrototype extends React.Component {
                         </div>
                     </div>
                 </div>
+
+
                 <div className="row">
-                    <div className="col-12">
-                        <div className="wbdv-search">
-                            <input type="text" className="form-control wbdv-search-bar" id="search-bar" placeholder="Search" />
-                        </div>
+                    <div className="col-xl-6">
+                        <VideoListComponent
+                            selectVideo={this.selectVideo}
+                            searchVideo={this.searchVideo}
+                            videos={this.state.videos}/>
                     </div>
                 </div>
             </div>
