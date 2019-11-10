@@ -19,5 +19,8 @@
 
 ***Strategy:*** This web application allows artists to post demo tracks for producers to listen to. Producers and artists are able to connect with each other based on these tracks. The artist can choose to make their demos private, for producers’ listening only, or public, available to the general public (listeners) as well.
 
-***API: SoundCloud***
-SoundCloud is the leading audio platform that enables anyone to upload, record, promote and share their sounds across the web. The SoundCloud API makes most of the features from SoundCloud.com available to app developers. With the help of its SDKs it's easy to integrate functionality like audio sharing and recording directly into iOS, Android and web apps.
+***API: YouTube Data***
+
+YouTube Data API allows you to add YouTube functionality to your site and search for content:
+- The API allows you can add a variety of YouTube features to your application. The features include: uploading videos, managing playlists and subscriptions, updating channel settings, etc.
+- Use the API to search for videos matching specific search terms, topics, locations, publication dates, and much more. The APIs search.list method also supports searches for playlists and channels.
