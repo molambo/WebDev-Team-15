@@ -33,7 +33,7 @@ export default class VideoListComponent extends React.Component {
                             key={video.id.videoId}>
                             <img height="40px" src={video.snippet.thumbnails.high.url}/>
                             &nbsp; &nbsp;
-                            {video.snippet.title}
+                            <t className="font-weight-bold"> {video.snippet.title} </t> by <u className="font-weight-underline">{video.snippet.channelTitle}</u>
 
                         </li>
                     )
