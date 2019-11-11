@@ -1,0 +1,25 @@
+.wbdv-video-searchbar {
+}
+
+
+.wbdv-video-row {
+    padding: 0 1em;
+}
+
+.wbdv-video-thumbnail {
+    height: 40px;
+}
+
+.wbdv-video-info {
+    padding-left: 1em;
+}
+
+.wbdv-video-title {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wbdv-channel-name {
+    text-decoration: underline!important;
+    cursor: pointer;
+}

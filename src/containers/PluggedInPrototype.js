@@ -67,7 +67,7 @@ export class PluggedInPrototype extends React.Component {
         return(
           <body>
             <nav className="wbdv-nav">
-                <a href="../index.html">Back</a>
+                <a href="../index.html">Home</a>
             </nav>
             <div className="wbdv-header">
                 <div className="row">
@@ -81,15 +81,14 @@ export class PluggedInPrototype extends React.Component {
                     </div>
                 </div>
 
-
-                <div className="row">
-                    <div className="col-xl-6">
-                        <VideoListComponent
-                            selectVideo={this.selectVideo}
-                            searchVideo={this.searchVideo}
-                            videos={this.state.videos}/>
+                    <div className="row">
+                        <div className="col-xl-6 wbdv-video-list">
+                            <VideoListComponent
+                                selectVideo={this.selectVideo}
+                                searchVideo={this.searchVideo}
+                                videos={this.state.videos}/>
+                        </div>
                     </div>
-                </div>
             </div>
         </body>
 

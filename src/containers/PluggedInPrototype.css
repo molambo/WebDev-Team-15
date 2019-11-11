@@ -5,3 +5,8 @@
 .wbdv-header {
   text-align: center;
 }
+
+.wbdv-video-list {
+    margin: 1em auto;
+    width: 100%;
+}
