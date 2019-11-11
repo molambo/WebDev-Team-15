@@ -22,11 +22,11 @@ export default class VideoListComponent extends React.Component {
                     <input
                         onChange={this.searchTitleChanged}
                         value={this.state.searchTitle}
-                        className="form-control wbdv-video-searchbar "
+                        className="form-control wbdv-video-searchbar"
                         placeholder="Search for music and artists"/>
                     <button
                         onClick={() => this.props.searchVideo(this.state.searchTitle)}
-                        className="btn btn-primary wbdv-search-btn ">Search</button>
+                        className="btn btn-primary wbdv-search-btn">Search</button>
                 </div>
                 {
                     this.props.videos && this.props.videos.map(video =>

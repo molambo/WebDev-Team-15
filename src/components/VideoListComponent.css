@@ -1,6 +1,11 @@
 .wbdv-video-searchbar {
+    width: 75%!important;
 }
 
+.wbdv-search-btn {
+    width:15%;
+    margin-left: .5em;
+}
 
 .wbdv-video-row {
     padding: 0 1em;
