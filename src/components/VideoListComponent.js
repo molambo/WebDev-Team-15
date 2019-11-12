@@ -16,28 +16,34 @@ export default class VideoListComponent extends React.Component {
         })
 
     render() {
-        return(<div>
+        return (<div>
             <div className="list-group">
                 <div className="list-group-item form-inline row">
                     <input
                         onChange={this.searchTitleChanged}
                         value={this.state.searchTitle}
                         className="form-control wbdv-video-searchbar "
-                        placeholder="Search for music and artists"/>
+                        placeholder="Search for artists"/>
                     <button
                         onClick={() => this.props.searchVideo(this.state.searchTitle)}
-                        className="btn btn-primary wbdv-search-btn ">Search</button>
+                        className="btn btn-primary wbdv-search-btn ">Search
+                    </button>
                 </div>
                 {
                     this.props.videos && this.props.videos.map(video =>
-                        <div onClick={() => this.props.selectVideo(video.imdbID)}
-                            className="list-group-item row"
-                            key={video.id.videoId}>
+                        <div onClick={() =>
+                            this.props.selectVideo(video.snippet.title,
+                                video.snippet.channelTitle,
+                                video.snippet.description,
+                                video.snippet.thumbnails.high.url,
+                                video.snippet.publishedAt)}
+                             className="list-group-item row"
+                             key={video.id.videoId}>
                             <div className="row wbdv-video-row">
                                 <img className="wbdv-video-thumbnail" src={video.snippet.thumbnails.high.url}/>
                                 <div className="wbdv-video-info">
-                                  <a className="wbdv-video-title"> {video.snippet.title}</a>&nbsp;by&nbsp;
-                                  <a className="wbdv-channel-name">{video.snippet.channelTitle}</a>
+                                    <a className="wbdv-video-title"> {video.snippet.title}</a>&nbsp;by&nbsp;
+                                    <a className="wbdv-channel-name">{video.snippet.channelTitle}</a>
                                 </div>
                             </div>
                         </div>
