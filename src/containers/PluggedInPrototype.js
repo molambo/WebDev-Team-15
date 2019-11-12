@@ -11,12 +11,21 @@ export class PluggedInPrototype extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            videos: [],
-            video: {
-                title: '',
-                description: '',
-                artist: ''
-            }
+          videos: [],
+          video: {
+              items:
+              [{
+                snippet: {
+                  title: '',
+                  description: '',
+                  thumbnails: {
+                    high: ''
+                  },
+                  publishedAt: ''
+                }
+
+              }]
+          }
         }
     }
 
@@ -36,16 +45,15 @@ export class PluggedInPrototype extends React.Component {
                 })
             });
 
-    selectVideo = (title, artist, description, thumbnail, date) =>
-        this.setState({
-            video: {
-                title: title,
-                description: description,
-                artist: artist,
-                thumbnail: thumbnail,
-                date: date
-            }
-        });
+            selectVideo = videoId =>
+                fetch(`https://www.googleapis.com/youtube/v3/videos?&part=snippet&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs&id=${videoId}`)
+                    .then(response => response.json())
+                    .then(video => {
+                      console.log(video.items[0])
+                        this.setState({
+                            video: video
+                        })
+                      })
 
     render() {
         return (

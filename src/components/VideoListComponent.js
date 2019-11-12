@@ -32,11 +32,7 @@ export default class VideoListComponent extends React.Component {
                 {
                     this.props.videos && this.props.videos.map(video =>
                         <div onClick={() =>
-                            this.props.selectVideo(video.snippet.title,
-                                video.snippet.channelTitle,
-                                video.snippet.description,
-                                video.snippet.thumbnails.high.url,
-                                video.snippet.publishedAt)}
+                            this.props.selectVideo(video.id.videoId)}
                              className="list-group-item row"
                              key={video.id.videoId}>
                             <div className="row wbdv-video-row">
