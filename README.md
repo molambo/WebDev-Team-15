@@ -13,11 +13,12 @@
 - Contact producers
 - Getting music discovered
 
-***User 3: Listener***
-- Find new music
-- Find new artists
-
-***Strategy:*** This web application allows artists to post demo tracks for producers to listen to. Producers and artists are able to connect with each other based on these tracks. The artist can choose to make their demos private, for producers’ listening only, or public, available to the general public (listeners) as well.
+***Strategy:*** PluggedIn is a web application used to connect producers with independent artists who use Youtube as 
+their primary content platform. The site has two types of users: Producers, whose profiles contain information about 
+their production company, signed artists, genre, location and contact information, and artists, whose profiles contain 
+info about their Youtube channel, genre, location, and contact info. When artists search the site for producers, they 
+will have access to information about the producers on the site, which can be filtered by genre or location. On the 
+producer side, producers can search either from the users on the site, or from all artists on Youtube.
 
 ***API: YouTube Data***
 
