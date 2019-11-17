@@ -9,15 +9,21 @@ export class PluggedInPrototype extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            videos: [],
-            video: {
-                title: '',
-                description: ''
+            // videos: [],
+            // video: {
+            //     title: '',
+            //     description: ''
+            // },
+            channels: [],
+            channel: {
+                username:'',
+                //...
             }
         }
     }
     componentDidMount() {
-        this.findVideoByTitle("adele")
+        this.findVideoByTitle("adele").then(r => r.json);
+        this.findChannelByName("adele").then(r => r.json);
     }
 
     // createReview = review =>
@@ -30,27 +36,56 @@ export class PluggedInPrototype extends React.Component {
     //     }).then(response => response.json())
     //         .then(review => console.log(review))
 
-    searchVideo = searchTitleChanged =>
-        this.findVideoByTitle(searchTitleChanged)
+    searchChannel = searchTitleChanged =>
+        this.findChannelByName(searchTitleChanged);
 
-    findVideoByTitle = searchphrase =>
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+    findChannelByName = searchphrase  =>
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}
+        &type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(response => {
-              console.log(response.items)
+                console.log(response.items);
                 this.setState({
-                    videos: response.items
+                    channels: response.items
                 })
-            })
+            });
 
-    selectVideo = searchphrase =>
-        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}&type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+
+    selectChannel = searchphrase =>
+        fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}
+        &type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
             .then(response => response.json())
             .then(video => {
                 console.log(video)
                 this.setState({
                     video: video
                 })
+
+
+    //
+    // searchVideo = searchTitleChanged =>
+    //     this.findVideoByTitle(searchTitleChanged);
+    //
+    // findVideoByTitle = searchphrase =>
+    //     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}
+    //     &type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+    //         .then(response => response.json())
+    //         .then(response => {
+    //           console.log(response.items)
+    //             this.setState({
+    //                 videos: response.items
+    //             })
+    //         });
+    //
+    // selectVideo = searchphrase =>
+    //     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=${searchphrase}
+    //     &type=video&key=AIzaSyDzAog-ZQbUDu3qB2I0JCoyleKhfguoVNs`)
+    //         .then(response => response.json())
+    //         .then(video => {
+    //             console.log(video)
+    //             this.setState({
+    //                 video: video
+    //             })
 
                 // fetch(`http://localhost:8080/api/review/${imdbID}`)
                 //     .then(response => response.json())
@@ -61,7 +96,7 @@ export class PluggedInPrototype extends React.Component {
                 //         })
                 //     })
 
-            })
+            });
 
     render() {
         return(
@@ -85,9 +120,9 @@ export class PluggedInPrototype extends React.Component {
                 <div className="row">
                     <div className="col-xl-6">
                         <VideoListComponent
-                            selectVideo={this.selectVideo}
-                            searchVideo={this.searchVideo}
-                            videos={this.state.videos}/>
+                            selectVideo={this.selectChannel}
+                            searchVideo={this.searchChannel}
+                            videos={this.state.channels}/>
                     </div>
                 </div>
             </div>
