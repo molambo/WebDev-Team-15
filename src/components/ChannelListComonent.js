@@ -12,4 +12,6 @@ export default class VideoListComponent extends Component {
         this.setState({
             searchChannel: event.target.value
         });
+
+    
 }
