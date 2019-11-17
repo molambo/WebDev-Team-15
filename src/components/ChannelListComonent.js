@@ -13,5 +13,5 @@ export default class VideoListComponent extends Component {
             searchChannel: event.target.value
         });
 
-    
+
 }

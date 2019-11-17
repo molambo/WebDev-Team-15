@@ -13,9 +13,14 @@
     "node-modules": "^1.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+<<<<<<< HEAD
     "react-fontawesome": "^1.7.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0"
+=======
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^2.1.8"
+>>>>>>> fd3085f4257bc8be751f5dd36fc450fb85c60d93
   },
   "scripts": {
     "start": "react-scripts start",

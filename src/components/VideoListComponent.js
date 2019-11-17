@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './VideoListComponent.css'
+
 export default class VideoListComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -14,31 +16,36 @@ export default class VideoListComponent extends React.Component {
         })
 
     render() {
-        return(<div>
-            <ul className="list-group">
-                <li className="list-group-item">
+        return (<div>
+            <div className="list-group">
+                <div className="list-group-item form-inline row">
                     <input
                         onChange={this.searchTitleChanged}
                         value={this.state.searchTitle}
-                        className="form-control"
-                        placeholder="Search for music and artists"/>
+                        className="form-control wbdv-video-searchbar "
+                        placeholder="Search for artists"/>
                     <button
                         onClick={() => this.props.searchVideo(this.state.searchTitle)}
-                        className="btn btn-primary">Search</button>
-                </li>
+                        className="btn btn-primary wbdv-search-btn ">Search
+                    </button>
+                </div>
                 {
                     this.props.videos && this.props.videos.map(video =>
-                        <li onClick={() => this.props.selectVideo(video.imdbID)}
-                            className="list-group-item text-left"
-                            key={video.id.videoId}>
-                            <img height="40px" src={video.snippet.thumbnails.high.url}/>
-                            &nbsp; &nbsp;
-                            <t className="font-weight-bold"> {video.snippet.title} </t> by <u className="font-weight-underline">{video.snippet.channelTitle}</u>
-
-                        </li>
+                        <div onClick={() =>
+                            this.props.selectVideo(video.id.videoId)}
+                             className="list-group-item row"
+                             key={video.id.videoId}>
+                            <div className="row wbdv-video-row">
+                                <img className="wbdv-video-thumbnail" src={video.snippet.thumbnails.high.url}/>
+                                <div className="wbdv-video-info">
+                                    <a className="wbdv-video-title"> {video.snippet.title}</a>&nbsp;by&nbsp;
+                                    <a className="wbdv-channel-name">{video.snippet.channelTitle}</a>
+                                </div>
+                            </div>
+                        </div>
                     )
                 }
-            </ul>
+            </div>
         </div>)
     }
 }
