@@ -1,26 +1,12 @@
 {
-  "name": "wbdv-team-15-client-react",
+  "name": "webdev-fa19-jada-letts-client-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-common-types": "^0.2.25",
-    "@fortawesome/fontawesome-free": "^5.11.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
     "bootstrap": "^4.3.1",
-    "font-awesome": "^4.7.0",
-    "node-modules": "^1.0.1",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-<<<<<<< HEAD
-    "react-fontawesome": "^1.7.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
-=======
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^2.1.8"
->>>>>>> fd3085f4257bc8be751f5dd36fc450fb85c60d93
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-scripts": "3.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
