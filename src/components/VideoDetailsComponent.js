@@ -1,5 +1,5 @@
 import React from 'react';
-import './VideoDetailsComponent.css'
+import '../css/VideoDetailsComponent.css'
 
 export default class VideoDetailsComponent extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class VideoDetailsComponent extends React.Component {
     render() {
         return (
             <div>
-                {this.props.video.items[0].snippet.title != '' &&
+                {this.props.video.items[0].snippet.title !== '' &&
                 <div className="container wbdv-details">
                     <h3>{this.props.video.items[0].snippet.title}</h3>
                     <img src={this.props.video.items[0].snippet.thumbnails.high.url}/>

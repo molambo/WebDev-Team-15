@@ -1,8 +1,8 @@
 import React from 'react'
 
-import '../css/VideoListComponent.css'
+import '../css/ChannelListComponent.css'
 
-export default class VideoListComponent extends React.Component {
+export default class ChannelListComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +13,7 @@ export default class VideoListComponent extends React.Component {
     searchTitleChanged = event =>
         this.setState({
             searchTitle: event.target.value
-        })
+        });
 
     render() {
         return (<div>
@@ -25,21 +25,21 @@ export default class VideoListComponent extends React.Component {
                         className="form-control wbdv-video-searchbar "
                         placeholder="Search for artists"/>
                     <button
-                        onClick={() => this.props.searchVideo(this.state.searchTitle)}
+                        onClick={() => this.props.searchChannel(this.state.searchTitle)}
                         className="btn btn-primary wbdv-search-btn ">Search
                     </button>
                 </div>
                 {
-                    this.props.videos && this.props.videos.map(video =>
+                    this.props.channels && this.props.channels.map(channel =>
                         <div onClick={() =>
-                            this.props.selectVideo(video.id.videoId)}
+                            this.props.selectChannel(channel.id.channelId)}
                              className="list-group-item row"
-                             key={video.id.videoId}>
-                            <div className="row wbdv-video-row">
-                                <img className="wbdv-video-thumbnail" src={video.snippet.thumbnails.high.url}/>
-                                <div className="wbdv-video-info">
-                                    <a className="wbdv-video-title"> {video.snippet.title}</a>&nbsp;by&nbsp;
-                                    <a className="wbdv-channel-name">{video.snippet.channelTitle}</a>
+                             key={channel.id.channelId}>
+                            <div className="row wbdv-channel-row">
+                                <img className="wbdv-channel-thumbnail" src={channel.snippet.thumbnails.high.url}/>
+                                <div className="wbdv-channel-info">
+                                    <a className="wbdv-channel-title"> {channel.snippet.title}</a>&nbsp;by&nbsp;
+                                    <a className="wbdv-channel-name">{channel.snippet.channelTitle}</a>
                                 </div>
                             </div>
                         </div>
